@@ -13,17 +13,15 @@ public class Main {
         int troom = scan.nextInt();
         int tcond = scan.nextInt();
         String mode = scan.next();
-        //System.out.println("t комн. = "+troom+", t конд. = "+tcond+". Выбран режим = "+mode);
+        int t = troom;
 
-        int t;
-        if ((mode.equals("freeze"))|((mode.equals("auto"))|(mode.equals("heat")))){
-            t = tcond;
-            }
-        else
-            t=troom;
+        if ((mode.equals("fan"))){t=troom;}
+
+        if ((troom<=tcond)&((mode.equals("auto"))|(mode.equals("heat")))){t = tcond;}
+
+        if ((troom>tcond)&((mode.equals("auto"))|(mode.equals("freeze")))){t = tcond;}
 
         String outputFName = "OUTPUT.TXT";//запись в файл результата
         Files.writeString(Path.of(outputFName), String.valueOf(t));
-
     }
 }

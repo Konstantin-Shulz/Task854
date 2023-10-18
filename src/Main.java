@@ -16,7 +16,7 @@ public class Main {
         //System.out.println("t комн. = "+troom+", t конд. = "+tcond+". Выбран режим = "+mode);
 
         int t;
-        if ((troom<tcond)&((mode.equals("auto"))|(mode.equals("heat")))){
+        if ((mode.equals("freeze"))|((mode.equals("auto"))|(mode.equals("heat")))){
             t = tcond;
             }
         else
